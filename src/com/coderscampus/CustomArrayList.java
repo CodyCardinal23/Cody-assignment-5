@@ -21,7 +21,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 
     private void increaseCapacity() {
         items = Arrays.copyOf(items, items.length * 2);
-        System.out.println("Size Doubled");
+        System.out.println("\nSize Doubled!\n");
     }
 
     @Override
