@@ -3,18 +3,20 @@ package com.coderscampus;
 public class CustomListApplication {
     public static void main(String[] args) {
         CustomList<Integer> customList = new CustomArrayList<>();
-        // Add elements to customList and check its size.
-        for (int i = 0; i < 20; i++) {
+
+        for (int i = 0; i < 50; i++) {
             customList.add(i);
         }
 
-         System.out.println("List size is: " + customList.getSize());
-        // List size is: 20
+        System.out.println("List size is: " + customList.getSize());
 
-        // Get elements from customList and print them.
         for (int i = 0; i < customList.getSize(); i++) {
-             System.out.println("Element at index " + i + " is: " + customList.get(i));
+            System.out.println("Element at index " + i + " is: " +
+                    customList.get(i));
         }
 
+
     }
+
+
 }

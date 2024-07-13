@@ -3,17 +3,25 @@ package com.coderscampus;
 import java.util.Arrays;
 
 public class CustomArrayList<T> implements CustomList<T> {
-    private Object[] elements = new Object[10];
-    private int size = 0; // number of elements in the list
+    private Object[] items = new Object[10];
+    private int size = 0;
 
     @Override
-    public boolean add(T item) {
-        if (size == elements.length) { // if the array is full, double its size
-            elements = Arrays.copyOf(elements, elements.length * 2);
+    public void add(T item) {
+        if (isFull()) {
+            increaseCapacity();
         }
-        elements[size] = item;
-        size++;// add the new element to the end of the array
-        return true;
+        items[size] = item;
+        size++;
+    }
+
+    private boolean isFull() {
+        return size == items.length;
+    }
+
+    private void increaseCapacity() {
+        items = Arrays.copyOf(items, items.length * 2);
+        System.out.println("Size Doubled");
     }
 
     @Override
@@ -24,9 +32,9 @@ public class CustomArrayList<T> implements CustomList<T> {
     @Override
     public T get(int index) {
         if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+            throw new IndexOutOfBoundsException("Invalid Index. Requested index is outside of current array size.");
         }
-        return (T) elements[index];
+        //noinspection unchecked
+        return (T) items[index];
     }
-
 }

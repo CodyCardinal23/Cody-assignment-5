@@ -1,27 +1,11 @@
 package com.coderscampus;
 
 public interface CustomList<T> {
-    boolean add(T item);
+
+    void add(T item);
+
     int getSize();
+
     T get(int index);
-    /**
-     * This method should add a new item into the <code>CustomList</code> and should
-     * return <code>true</code> if it was successfully able to insert an item.
-     * @param item the item to be added to the <code>CustomList</code>
-     * @return <code>true</code> if item was successfully added, <code>false</code> if the item was not successfully added (note: it should always be able to add an item to the list)
-     *
-     */
 
-    /**
-     * This method should return the size of the <code>CustomList</code>
-     * based on the number of actual elements stored inside of the <code>CustomList</code>
-     * @return an <code>int</code> representing the number of elements stored in the <code>CustomList</code>
-     */
-
-    /**
-     * This method will return the actual element from the <code>CustomList</code> based on the
-     * index that is passed in.
-     * @param index represents the position in the backing <code>Object</code> array that we want to access
-     * @return The element that is stored inside of the <code>CustomList</code> at the given index
-     */
 }
